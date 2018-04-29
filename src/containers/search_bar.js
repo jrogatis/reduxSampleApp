@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchWeather } from '../actions/index';
 
-export default class SearchBar extends Component {
+class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = { term: '' };
   }
 
   onInputChange(ev) {
-    console.info(ev.target.value);
     this.setState({ term: ev.target.value });
   }
+
+  onFormSubmit(ev) {
+    ev.preventDefault();
+    const { fetchWeather } = this.props;
+    const { term } = this.state;
+    fetchWeather(term);
+    this.setState({ term: '' });
+  }
+
   render() {
-    const { term } = this.props;
+    const { term } = this.state;
     return (
-      <form className="input-group">
+      <form onSubmit={ev => this.onFormSubmit(ev)} className="input-group">
         <input
           placeholder="Get a five day forecast in your favorite cisites"
           className="form-control"
@@ -29,3 +40,11 @@ export default class SearchBar extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ fetchWeather }, dispatch);
+};
+
+export default connect(null, mapDispatchToProps)(SearchBar);
