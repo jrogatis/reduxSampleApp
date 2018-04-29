@@ -1,11 +1,9 @@
 import React from 'react';
-import BooksList from '../containers/books_list';
-import BookDetail from '../containers/book_detail';
+import SearchBar from '../containers/search_bar';
 
 const App = () => (
   <div>
-    <BooksList />
-    <BookDetail />
+    <SearchBar />
   </div>
 );
 export default App;
