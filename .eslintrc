@@ -1,13 +1,21 @@
 {
   "extends": [
-    "eslint-config-react-app",
     "plugin:prettier/recommended"
   ],
   "plugins": [
-    "prettier"
+    "prettier",
+     "react"
   ],
   "env": {
   },
+  "parser": "babel-eslint",
+  "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true
+      }
+    },
   "rules": {
     "prettier/prettier": "error",
     "jsx-a11y/href-no-hash": 0,

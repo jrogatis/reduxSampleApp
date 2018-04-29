@@ -22,7 +22,8 @@
     "precommit": "lint-staged",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint-verbose": "DEBUG=eslint:cli-engine eslint .",
-    "prettier": "npx prettier --config ./.prettierrc --write './**/*.js'"
+    "prettier": "npx prettier --config ./.prettierrc --write './**/*.js'",
+    "fix": "npx eslint . --fix"
   },
   "author": "Jean Phiilp de Rogatis",
   "license": "ISC",
@@ -32,15 +33,13 @@
     "babel-core": "^6.2.1",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^6.2.0",
-    "babel-preset-es2015": "^6.1.18",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.1.18",
     "chai": "^3.5.0",
     "chai-jquery": "^2.0.0",
-    "eslint": "^4.8.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-flowtype": "^2.46.3",
     "eslint-plugin-import": "^2.7.0",
@@ -60,7 +59,6 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
-    "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
